@@ -1,2 +1,2 @@
 # react-name-age
-react-name-age.netlify.app
+https://react-name-age.netlify.app/

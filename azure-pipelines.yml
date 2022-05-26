@@ -22,6 +22,7 @@ steps:
     verbose: true
 
 - script: |
+    cd react-name-age
     npm install
     npm run build
   displayName: 'npm install and build'

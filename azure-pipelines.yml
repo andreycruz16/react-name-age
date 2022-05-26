@@ -15,14 +15,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- task: Npm@1
-  inputs:
-    command: 'ci'
-    workingDir: '$(System.DefaultWorkingDirectory)/react-name-age/'
-    verbose: true
-
 - script: |
-    cd react-name-age
     npm install
     npm run build
   displayName: 'npm install and build'
@@ -30,7 +23,7 @@ steps:
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/react-name-age/build'
-    includeRootFolder: true
+    includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true

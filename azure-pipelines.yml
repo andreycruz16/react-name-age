@@ -6,10 +6,6 @@
 trigger:
 - master
 
-variables:
-  uiSource: 'src'
-  uiBuild: '$(uiSource)/build'
-
 pool:
   vmImage: ubuntu-latest
 
@@ -31,6 +27,7 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+  workingDirectory: '$(Build.SourcesDirectory)/react-name-age'
 
 - task: ArchiveFiles@2
   inputs:

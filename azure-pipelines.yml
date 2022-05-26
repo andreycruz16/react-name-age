@@ -20,6 +20,9 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+- bash: ls src
+  displayName: 'Check directories'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'

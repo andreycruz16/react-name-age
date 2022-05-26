@@ -15,6 +15,12 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: Npm@1
+  inputs:
+    command: 'ci'
+    workingDir: '$(System.DefaultWorkingDirectory)/react-name-age/'
+    verbose: true
+
 - script: |
     npm install
     npm run build

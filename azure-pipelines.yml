@@ -19,14 +19,22 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: Npm@1
+  inputs:
+    command: 'ci'
+    workingDir: '$(System.DefaultWorkingDirectory)/react-name-age'
+    verbose: true
+
 - script: |
+    cd react-name-age
+    npm cache clean --force
     npm install
     npm run build
   displayName: 'npm install and build'
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'src/build'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)\react-name-age\build'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'

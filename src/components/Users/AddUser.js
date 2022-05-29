@@ -52,12 +52,9 @@ const AddUser = (props) => {
           onConfirm={errorHandler}
         />
       )}
-      <Card>
-        <div>Hello Mark Andrey</div>
-      </Card>
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Username mark andrey</label>
           <input
             id="username"
             type="text"
